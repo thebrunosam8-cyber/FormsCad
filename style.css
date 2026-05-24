@@ -1,0 +1,271 @@
+/* =====================
+   Reset & Base
+   ===================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background-color: #f4f4f0;
+  color: #1a1a1a;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+/* =====================
+   Layout
+   ===================== */
+.page {
+  width: 100%;
+  max-width: 720px;
+}
+
+.card {
+  background: #ffffff;
+  border: 0.5px solid #d8d8d0;
+  border-radius: 12px;
+  padding: 2rem 2.25rem;
+}
+
+/* =====================
+   Header
+   ===================== */
+.form-header {
+  margin-bottom: 1.5rem;
+}
+
+.form-header h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111;
+  letter-spacing: -0.3px;
+}
+
+.form-header p {
+  font-size: 13px;
+  color: #666;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.form-header p strong {
+  color: #333;
+}
+
+/* =====================
+   Section Labels
+   ===================== */
+.section-label {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #999;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 1.5rem 0 0.75rem;
+  padding-bottom: 6px;
+  border-bottom: 0.5px solid #e8e8e4;
+}
+
+/* =====================
+   Grid
+   ===================== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.mt-12 {
+  margin-top: 12px;
+}
+
+/* =====================
+   Fields
+   ===================== */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  height: 36px;
+  padding: 0 10px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #111;
+  background: #fff;
+  border: 0.5px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.field textarea {
+  height: 76px;
+  padding: 8px 10px;
+  resize: none;
+  line-height: 1.5;
+}
+
+.field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+  cursor: pointer;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: #378ADD;
+  box-shadow: 0 0 0 3px rgba(55, 138, 221, 0.12);
+}
+
+/* =====================
+   Validation States
+   ===================== */
+.err-msg {
+  font-size: 11px;
+  color: #c0392b;
+  display: none;
+}
+
+.field.has-error .err-msg {
+  display: block;
+}
+
+.field.has-error input,
+.field.has-error select {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+/* =====================
+   Save Button
+   ===================== */
+.btn-save {
+  margin-top: 1.75rem;
+  width: 100%;
+  height: 42px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.15s, transform 0.1s, opacity 0.15s;
+}
+
+.btn-save:hover {
+  background: #333;
+}
+
+.btn-save:active {
+  transform: scale(0.99);
+}
+
+.btn-save:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Spinner (shown while sending) */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* =====================
+   Status Bar
+   ===================== */
+.status-bar {
+  display: none;
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.4;
+}
+
+.status-bar.success {
+  display: flex;
+  background: #eafaf1;
+  color: #1e7e45;
+  border: 0.5px solid #a9dfbf;
+}
+
+.status-bar.error {
+  display: flex;
+  background: #fdf0ef;
+  color: #a93226;
+  border: 0.5px solid #f5b7b1;
+}
+
+/* =====================
+   Responsive
+   ===================== */
+@media (max-width: 600px) {
+  .card {
+    padding: 1.5rem 1rem;
+  }
+
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .span-2 {
+    grid-column: span 1;
+  }
+}

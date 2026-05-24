@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulário de Cadastro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="page">
+    <div class="card">
+      <div class="form-header">
+        <h1>Novo cadastro</h1>
+        <p>Preencha todos os campos obrigatórios (*).</p>
+      </div>
+
+      <!-- Dados pessoais -->
+      <span class="section-label">Dados pessoais</span>
+      <div class="grid-2">
+        <div class="field" id="f-nome">
+          <label for="nome">Nome *</label>
+          <input id="nome" type="text" placeholder="Nome" />
+          <span class="err-msg">Campo obrigatório</span>
+        </div>
+        <div class="field" id="f-sobrenome">
+          <label for="sobrenome">Sobrenome *</label>
+          <input id="sobrenome" type="text" placeholder="Sobrenome" />
+          <span class="err-msg">Campo obrigatório</span>
+        </div>
+      </div>
+      <div class="grid-3 mt-12">
+        <div class="field" id="f-cpf">
+          <label for="cpf">CPF *</label>
+          <input id="cpf" type="text" placeholder="000.000.000-00" maxlength="14" />
+          <span class="err-msg">CPF inválido</span>
+        </div>
+        <div class="field" id="f-nascimento">
+          <label for="nascimento">Data de nascimento *</label>
+          <input id="nascimento" type="date" />
+          <span class="err-msg">Campo obrigatório</span>
+        </div>
+        <div class="field">
+          <label for="sexo">Sexo</label>
+          <select id="sexo">
+            <option value="">Selecione</option>
+            <option>Masculino</option>
+            <option>Feminino</option>
+            <option>Prefiro não informar</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Contato -->
+      <span class="section-label">Contato</span>
+      <div class="grid-2">
+        <div class="field" id="f-email">
+          <label for="email">E-mail *</label>
+          <input id="email" type="email" placeholder="nome@email.com" />
+          <span class="err-msg">E-mail inválido</span>
+        </div>
+        <div class="field" id="f-telefone">
+          <label for="telefone">Telefone *</label>
+          <input id="telefone" type="text" placeholder="(00) 00000-0000" maxlength="15" />
+          <span class="err-msg">Campo obrigatório</span>
+        </div>
+      </div>
+
+      <!-- Endereço -->
+      <span class="section-label">Endereço</span>
+      <div class="grid-3">
+        <div class="field" id="f-cep">
+          <label for="cep">CEP *</label>
+          <input id="cep" type="text" placeholder="00000-000" maxlength="9" />
+          <span class="err-msg">CEP inválido</span>
+        </div>
+        <div class="field span-2" id="f-logradouro">
+          <label for="logradouro">Logradouro *</label>
+          <input id="logradouro" type="text" placeholder="Rua, Avenida..." />
+          <span class="err-msg">Campo obrigatório</span>
+        </div>
+      </div>
+      <div class="grid-3 mt-12">
+        <div class="field" id="f-numero">
+          <label for="numero">Número *</label>
+          <input id="numero" type="text" placeholder="123" />
+          <span class="err-msg">Campo obrigatório</span>
+        </div>
+        <div class="field">
+          <label for="complemento">Complemento</label>
+          <input id="complemento" type="text" placeholder="Apto, Bloco..." />
+        </div>
+        <div class="field" id="f-bairro">
+          <label for="bairro">Bairro *</label>
+          <input id="bairro" type="text" placeholder="Bairro" />
+          <span class="err-msg">Campo obrigatório</span>
+        </div>
+      </div>
+      <div class="grid-2 mt-12">
+        <div class="field" id="f-cidade">
+          <label for="cidade">Cidade *</label>
+          <input id="cidade" type="text" placeholder="Cidade" />
+          <span class="err-msg">Campo obrigatório</span>
+        </div>
+        <div class="field" id="f-estado">
+          <label for="estado">Estado *</label>
+          <select id="estado">
+            <option value="">Selecione</option>
+            <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+            <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+            <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+            <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+            <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+            <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+            <option selected>SP</option><option>SE</option><option>TO</option>
+          </select>
+          <span class="err-msg">Campo obrigatório</span>
+        </div>
+      </div>
+
+      <!-- Informações adicionais -->
+      <span class="section-label">Informações adicionais</span>
+      <div class="grid-2">
+        <div class="field">
+          <label for="perfil">Perfil</label>
+          <select id="perfil">
+            <option value="">Selecione</option>
+            <option>Administrador</option>
+            <option>Usuário</option>
+            <option>Visitante</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="status_cadastro">Status</label>
+          <select id="status_cadastro">
+            <option value="ativo">Ativo</option>
+            <option value="inativo">Inativo</option>
+            <option value="pendente">Pendente</option>
+          </select>
+        </div>
+      </div>
+      <div class="field mt-12">
+        <label for="obs">Observações</label>
+        <textarea id="obs" placeholder="Informações adicionais relevantes..."></textarea>
+      </div>
+
+      <button class="btn-save" id="btn-salvar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Salvar e enviar cadastro
+      </button>
+
+      <div class="status-bar" id="status-bar"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+  <p>
+    
+</form>
+  </p>
+</body>
+</html>
